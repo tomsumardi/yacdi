@@ -1,0 +1,569 @@
+{
+    "StorageClusterDefinition": {
+        "HardwareProfiles": {
+            "HardwareProfile": [
+                {
+                    "Name": "HwProfile01",
+                    "Drive": {
+                        "DriveType": "SSD",
+                        "SizeInGB": "240",
+                        "Quantity": "1"
+                    },
+                    "NIC": [
+                        {
+                            "BandwidthInGbps": "1",
+                            "Quantity": "1"
+                        },
+                        {
+                            "BandwidthInGbps": "10",
+                            "Quantity": "2"
+                        }
+                    ]
+                },
+                {
+                    "Name": "HwProfile02",
+                    "Drive": [
+                        {
+                            "DriveType": "SSD",
+                            "SizeInGB": "240",
+                            "Quantity": "1"
+                        },
+                        {
+                            "DriveType": "SSD",
+                            "SizeInGB": "400",
+                            "Quantity": "2"
+                        },
+                        {
+                            "DriveType": "HDD",
+                            "SizeInGB": "6000",
+                            "Quantity": "10"
+                        }
+                    ],
+                    "NIC": [
+                        {
+                            "BandwidthInGbps": "1",
+                            "Quantity": "1"
+                        },
+                        {
+                            "BandwidthInGbps": "10",
+                            "Quantity": "4"
+                        }
+                    ]
+                }
+            ]
+        },
+        "StorageProfiles": {
+            "StorageProfile": [
+                {
+                    "Name": "mon-client",
+                    "HardwareProfileName": "HwProfile01",
+                    "Drive": {
+                        "DriveType": "SSD",
+                        "SizeInGB": "240",
+                        "DriveUse": "OperatingSystem",
+                        "Quantity": "1",
+                        "Comment": "RAID 1: 2x SSD"
+                    }
+                },
+                {
+                    "Name": "data2-10",
+                    "HardwareProfileName": "HwProfile02",
+                    "Drive": [
+                        {
+                            "DriveType": "SSD",
+                            "SizeInGB": "240",
+                            "DriveUse": "OperatingSystem",
+                            "Quantity": "1"
+                        },
+                        {
+                            "DriveType": "SSD",
+                            "SizeInGB": "400",
+                            "DriveUse": "Journal",
+                            "Quantity": "2"
+                        },
+                        {
+                            "DriveType": "HDD",
+                            "SizeInGB": "6000",
+                            "DriveUse": "Data",
+                            "Quantity": "10"
+                        }
+                    ]
+                }
+            ]
+        },
+        "ServerConfigurations": {
+            "ServerConfiguration": [
+                {
+                    "HostName": "dfw-mon-01",
+                    "StorageProfileName": "mon-client",
+                    "Comment": "BigD/8/14/9",
+                    "UUID": "897D946A-D4D6-4fb0-8E0C-F5916AC114AC",
+                    "Interface": [
+                        {
+                            "InterfaceName": "1GigE",
+                            "NetworkName": "CandC",
+                            "IPAddress": "10.75.212.2",
+                            "BondType": "none",
+                            "MACAddresses": {
+                                "MACAddress": "2F:04:C7:73:E3:01"
+                            },
+                            "UUID": "19e97c03-4e97-4f50-b0b1-e6f41e05c943"
+                        },
+                        {
+                            "InterfaceName": "public",
+                            "NetworkName": "Public",
+                            "IPAddress": "192.168.1.2",
+                            "BondType": "active-backup",
+                            "MACAddresses": {
+                                "MACAddress": [
+                                    "2F:04:C7:73:E5:02",
+                                    "2F:04:C7:73:E5:03"
+                                ]
+                            },
+                            "UUID": "7f515b29-b83f-414e-8bc0-b647a1d7b0c0"
+                        }
+                    ]
+                },
+                {
+                    "HostName": "dfw-mon-02",
+                    "StorageProfileName": "mon-client",
+                    "Comment": "BigD/8/14/9",
+                    "UUID": "897D946A-D4D6-4fb0-8E0C-F5916AC114AC",
+                    "Interface": [
+                        {
+                            "InterfaceName": "1GigE",
+                            "NetworkName": "CandC",
+                            "IPAddress": "10.75.212.3",
+                            "BondType": "none",
+                            "MACAddresses": {
+                                "MACAddress": "2F:04:C7:73:E3:11"
+                            },
+                            "UUID": "19e97c03-4e97-4f50-b0b1-e6f41e05c943"
+                        },
+                        {
+                            "InterfaceName": "public",
+                            "NetworkName": "Public",
+                            "IPAddress": "192.168.1.3",
+                            "BondType": "active-backup",
+                            "MACAddresses": {
+                                "MACAddress": [
+                                    "2F:04:C7:73:E5:12",
+                                    "2F:04:C7:73:E5:13"
+                                ]
+                            },
+                            "UUID": "7f515b29-b83f-414e-8bc0-b647a1d7b0c0"
+                        }
+                    ]
+                },
+                {
+                    "HostName": "dfw-mon-03",
+                    "StorageProfileName": "mon-client",
+                    "Comment": "BigD/8/14/9",
+                    "UUID": "897D946A-D4D6-4fb0-8E0C-F5916AC114AC",
+                    "Interface": [
+                        {
+                            "InterfaceName": "1GigE",
+                            "NetworkName": "CandC",
+                            "IPAddress": "10.75.212.4",
+                            "BondType": "none",
+                            "MACAddresses": {
+                                "MACAddress": "2F:04:C7:73:E3:21"
+                            },
+                            "UUID": "19e97c03-4e97-4f50-b0b1-e6f41e05c943"
+                        },
+                        {
+                            "InterfaceName": "public",
+                            "NetworkName": "Public",
+                            "IPAddress": "192.168.1.4",
+                            "BondType": "active-backup",
+                            "MACAddresses": {
+                                "MACAddress": [
+                                    "2F:04:C7:73:E5:22",
+                                    "2F:04:C7:73:E5:23"
+                                ]
+                            },
+                            "UUID": "7f515b29-b83f-414e-8bc0-b647a1d7b0c0"
+                        }
+                    ]
+                },
+                {
+                    "HostName": "dfw-data-01",
+                    "StorageProfileName": "data2-10",
+                    "Comment": "BigD/8/14/9",
+                    "UUID": "897D946A-D4D6-4fb0-8E0C-F5916AC114AC",
+                    "Interface": [
+                        {
+                            "InterfaceName": "1GigE",
+                            "NetworkName": "CandC",
+                            "IPAddress": "10.75.212.5",
+                            "BondType": "none",
+                            "MACAddresses": {
+                                "MACAddress": "2F:04:C7:73:E3:31"
+                            },
+                            "UUID": "19e97c03-4e97-4f50-b0b1-e6f41e05c943"
+                        },
+                        {
+                            "InterfaceName": "public",
+                            "NetworkName": "Public",
+                            "IPAddress": "192.168.1.5",
+                            "BondType": "active-backup",
+                            "MACAddresses": {
+                                "MACAddress": [
+                                    "2F:04:C7:73:E5:32",
+                                    "2F:04:C7:73:E5:33"
+                                ]
+                            },
+                            "UUID": "7f515b29-b83f-414e-8bc0-b647a1d7b0c0"
+                        },
+                        {
+                            "InterfaceName": "private",
+                            "NetworkName": "Private",
+                            "IPAddress": "192.168.2.5",
+                            "BondType": "active-backup",
+                            "MACAddresses": {
+                                "MACAddress": [
+                                    "2F:04:C7:73:E5:34",
+                                    "2F:04:C7:73:E5:35"
+                                ]
+                            },
+                            "UUID": "7f515b29-b83f-414e-8bc0-b647a1d7b0c0"
+                        }
+                    ]
+                },
+                {
+                    "HostName": "dfw-data-02",
+                    "StorageProfileName": "data2-10",
+                    "Comment": "BigD/8/14/9",
+                    "UUID": "897D946A-D4D6-4fb0-8E0C-F5916AC114AC",
+                    "Interface": [
+                        {
+                            "InterfaceName": "1GigE",
+                            "NetworkName": "CandC",
+                            "IPAddress": "10.75.212.6",
+                            "BondType": "none",
+                            "MACAddresses": {
+                                "MACAddress": "2F:04:C7:73:E3:41"
+                            },
+                            "UUID": "19e97c03-4e97-4f50-b0b1-e6f41e05c943"
+                        },
+                        {
+                            "InterfaceName": "public",
+                            "NetworkName": "Public",
+                            "IPAddress": "192.168.1.6",
+                            "BondType": "active-backup",
+                            "MACAddresses": {
+                                "MACAddress": [
+                                    "2F:04:C7:73:E5:42",
+                                    "2F:04:C7:73:E5:43"
+                                ]
+                            },
+                            "UUID": "7f515b29-b83f-414e-8bc0-b647a1d7b0c0"
+                        },
+                        {
+                            "InterfaceName": "private",
+                            "NetworkName": "Private",
+                            "IPAddress": "192.168.2.6",
+                            "BondType": "active-backup",
+                            "MACAddresses": {
+                                "MACAddress": [
+                                    "2F:04:C7:73:E5:45",
+                                    "2F:04:C7:73:E5:46"
+                                ]
+                            },
+                            "UUID": "7f515b29-b83f-414e-8bc0-b647a1d7b0c0"
+                        }
+                    ]
+                },
+                {
+                    "HostName": "dfw-data-03",
+                    "StorageProfileName": "data2-10",
+                    "Comment": "BigD/8/14/9",
+                    "UUID": "897D946A-D4D6-4fb0-8E0C-F5916AC114AC",
+                    "Interface": [
+                        {
+                            "InterfaceName": "1GigE",
+                            "NetworkName": "CandC",
+                            "IPAddress": "10.75.212.7",
+                            "BondType": "none",
+                            "MACAddresses": {
+                                "MACAddress": "2F:04:C7:73:E3:51"
+                            },
+                            "UUID": "19e97c03-4e97-4f50-b0b1-e6f41e05c943"
+                        },
+                        {
+                            "InterfaceName": "public",
+                            "NetworkName": "Public",
+                            "IPAddress": "192.168.1.7",
+                            "BondType": "active-backup",
+                            "MACAddresses": {
+                                "MACAddress": [
+                                    "2F:04:C7:73:E5:52",
+                                    "2F:04:C7:73:E5:53"
+                                ]
+                            },
+                            "UUID": "7f515b29-b83f-414e-8bc0-b647a1d7b0c0"
+                        },
+                        {
+                            "InterfaceName": "private",
+                            "NetworkName": "Private",
+                            "IPAddress": "192.168.2.7",
+                            "BondType": "active-backup",
+                            "MACAddresses": {
+                                "MACAddress": [
+                                    "2F:04:C7:73:E5:54",
+                                    "2F:04:C7:73:E5:55"
+                                ]
+                            },
+                            "UUID": "7f515b29-b83f-414e-8bc0-b647a1d7b0c0"
+                        }
+                    ]
+                },
+                {
+                    "HostName": "dfw-data-04",
+                    "StorageProfileName": "data2-10",
+                    "Comment": "BigD/8/14/9",
+                    "UUID": "897D946A-D4D6-4fb0-8E0C-F5916AC114AC",
+                    "Interface": [
+                        {
+                            "InterfaceName": "1GigE",
+                            "NetworkName": "CandC",
+                            "IPAddress": "10.75.212.8",
+                            "BondType": "none",
+                            "MACAddresses": {
+                                "MACAddress": "2F:04:C7:73:E3:61"
+                            },
+                            "UUID": "19e97c03-4e97-4f50-b0b1-e6f41e05c943"
+                        },
+                        {
+                            "InterfaceName": "public",
+                            "NetworkName": "Public",
+                            "IPAddress": "192.168.1.8",
+                            "BondType": "active-backup",
+                            "MACAddresses": {
+                                "MACAddress": [
+                                    "2F:04:C7:73:E5:62",
+                                    "2F:04:C7:73:E5:63"
+                                ]
+                            },
+                            "UUID": "7f515b29-b83f-414e-8bc0-b647a1d7b0c0"
+                        },
+                        {
+                            "InterfaceName": "private",
+                            "NetworkName": "Private",
+                            "IPAddress": "192.168.2.8",
+                            "BondType": "active-backup",
+                            "MACAddresses": {
+                                "MACAddress": [
+                                    "2F:04:C7:73:E5:64",
+                                    "2F:04:C7:73:E5:65"
+                                ]
+                            },
+                            "UUID": "7f515b29-b83f-414e-8bc0-b647a1d7b0c0"
+                        }
+                    ]
+                },
+                {
+                    "HostName": "dfw-data-05",
+                    "StorageProfileName": "data2-10",
+                    "Comment": "BigD/8/14/9",
+                    "UUID": "897D946A-D4D6-4fb0-8E0C-F5916AC114AC",
+                    "Interface": [
+                        {
+                            "InterfaceName": "1GigE",
+                            "NetworkName": "CandC",
+                            "IPAddress": "10.75.212.9",
+                            "BondType": "none",
+                            "MACAddresses": {
+                                "MACAddress": "2F:04:C7:73:E3:71"
+                            },
+                            "UUID": "19e97c03-4e97-4f50-b0b1-e6f41e05c943"
+                        },
+                        {
+                            "InterfaceName": "public",
+                            "NetworkName": "Public",
+                            "IPAddress": "192.168.1.9",
+                            "BondType": "active-backup",
+                            "MACAddresses": {
+                                "MACAddress": [
+                                    "2F:04:C7:73:E5:72",
+                                    "2F:04:C7:73:E5:73"
+                                ]
+                            },
+                            "UUID": "7f515b29-b83f-414e-8bc0-b647a1d7b0c0"
+                        },
+                        {
+                            "InterfaceName": "private",
+                            "NetworkName": "Private",
+                            "IPAddress": "192.168.2.9",
+                            "BondType": "active-backup",
+                            "MACAddresses": {
+                                "MACAddress": [
+                                    "2F:04:C7:73:E5:74",
+                                    "2F:04:C7:73:E5:75"
+                                ]
+                            },
+                            "UUID": "7f515b29-b83f-414e-8bc0-b647a1d7b0c0"
+                        }
+                    ]
+                },
+                {
+                    "HostName": "dfw-client-01",
+                    "StorageProfileName": "mon-client",
+                    "Comment": "BigD/8/14/9",
+                    "UUID": "897D946A-D4D6-4fb0-8E0C-F5916AC114AC",
+                    "Interface": [
+                        {
+                            "InterfaceName": "1GigE",
+                            "NetworkName": "CandC",
+                            "IPAddress": "10.75.212.10",
+                            "BondType": "none",
+                            "MACAddresses": {
+                                "MACAddress": "2F:04:C7:73:E3:81"
+                            },
+                            "UUID": "19e97c03-4e97-4f50-b0b1-e6f41e05c943"
+                        },
+                        {
+                            "InterfaceName": "public",
+                            "NetworkName": "Public",
+                            "IPAddress": "192.168.1.10",
+                            "BondType": "active-backup",
+                            "MACAddresses": {
+                                "MACAddress": [
+                                    "A5:04:C7:73:E5:82",
+                                    "A5:04:C7:73:E5:83"
+                                ]
+                            },
+                            "UUID": "7f515b29-b83f-414e-8bc0-b647a1d7b0c0"
+                        }
+                    ]
+                },
+                {
+                    "HostName": "dfw-client-02",
+                    "StorageProfileName": "mon-client",
+                    "Comment": "BigD/8/14/9",
+                    "UUID": "897D946A-D4D6-4fb0-8E0C-F5916AC114AC",
+                    "Interface": [
+                        {
+                            "InterfaceName": "1GigE",
+                            "NetworkName": "CandC",
+                            "IPAddress": "10.75.212.11",
+                            "BondType": "none",
+                            "MACAddresses": {
+                                "MACAddress": "2F:04:C7:73:E3:91"
+                            },
+                            "UUID": "19e97c03-4e97-4f50-b0b1-e6f41e05c943"
+                        },
+                        {
+                            "InterfaceName": "public",
+                            "NetworkName": "Public",
+                            "IPAddress": "192.168.1.11",
+                            "BondType": "active-backup",
+                            "MACAddresses": {
+                                "MACAddress": [
+                                    "2F:04:C7:73:E5:92",
+                                    "2F:04:C7:73:E5:93"
+                                ]
+                            },
+                            "UUID": "7f515b29-b83f-414e-8bc0-b647a1d7b0c0"
+                        },
+                        {
+                            "InterfaceName": "public.14",
+                            "NetworkName": "OtherRack",
+                            "IPAddress": "10.76.176.11",
+                            "BondType": "active-backup",
+                            "VLAN": "14",
+                            "MACAddresses": {
+                                "MACAddress": [
+                                    "2F:04:C7:73:E5:94",
+                                    "2F:04:C7:73:E5:95"
+                                ]
+                            },
+                            "UUID": "7f515b29-b83f-414e-8bc0-b647a1d7b0c0"
+                        }
+                    ]
+                }
+            ]
+        },
+        "StorageConfiguration": {
+            "Monitor": {
+                "Host": {
+                    "HostName": [
+                        "dfw-mon-01",
+                        "dfw-mon-02",
+                        "dfw-mon-03"
+                    ]
+                }
+            },
+            "Data": {
+                "Host": {
+                    "HostName": [
+                        "dfw-data-01",
+                        "dfw-data-02",
+                        "dfw-data-03",
+                        "dfw-data-04",
+                        "dfw-data-05"
+                    ]
+                }
+            },
+            "Client": {
+                "Host": {
+                    "HostName": [
+                        "dfw-client-01",
+                        "dfw-client-02"
+                    ]
+                }
+            },
+            "TimeServer": [
+                {
+                    "Type": "NTP",
+                    "Address": "216.229.0.179"
+                },
+                {
+                    "Type": "NTP",
+                    "Address": "131.107.13.100"
+                },
+                {
+                    "Type": "NTP",
+                    "Address": "128.138.141.172"
+                },
+                {
+                    "Type": "NTP",
+                    "Address": "24.56.178.140"
+                }
+            ],
+            "Network": [
+                {
+                    "NetworkName": "OtherRack",
+                    "NetworkType": "Management",
+                    "Subnet": "10.76.176.0",
+                    "Gateway": "10.76.176.1",
+                    "Prefix": "24"
+                },
+                {
+                    "NetworkName": "CandC",
+                    "NetworkType": "Management",
+                    "Subnet": "10.75.212.0",
+                    "Gateway": "10.76.176.1",
+                    "Prefix": "24"
+                },
+                {
+                    "NetworkName": "Public",
+                    "NetworkType": "Inter-Public",
+                    "Subnet": "192.168.1.0",
+                    "Gateway": "192.168.1.1",
+                    "Prefix": "24"
+                },
+                {
+                    "NetworkName": "Private",
+                    "NetworkType": "Intra-Private",
+                    "Subnet": "192.168.2.0",
+                    "Gateway": "192.168.2.1",
+                    "Prefix": "24"
+                }
+            ],
+            "ClusterName": "smb-hybrid"
+        },
+        "_xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+        "_xsi:noNamespaceSchemaLocation": "StorageClusterDefinition.xsd"
+    }
+}

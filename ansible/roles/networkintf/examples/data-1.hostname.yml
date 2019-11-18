@@ -1,0 +1,24 @@
+---
+
+StorageProfile_Drive_OperatingSystem: "/dev/sda"
+ServerConfiguration_Interface_Ether:
+  - NetworkName: enp0s9
+    Bootproto: static
+    IPAddress: 129.75.25.140
+    GwAddress: 129.75.25.1
+    Prefix: 24
+    Onboot: yes
+    Mtu: 1500
+ServerConfiguration_Interface_Bond:
+  - NetworkName: public
+    IPAddress: 192.168.1.50
+    GwAddress: 192.168.1.1
+    Prefix: 24
+    Bootproto: static
+    BondType: active-backup
+    Bond_miimon: 100
+    BondSlaves:
+      - enp0s3
+      - enp0s8
+    Onboot: yes
+    Mtu: 1500

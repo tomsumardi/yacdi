@@ -1,0 +1,20 @@
+---
+
+- name: Check host
+  wait_for: host={{ item }} port=22 delay={{ ssh_delay }} timeout={{ ssh_tmout }}
+  with_items: group
+  ignore_errors: true
+
+- name: remove hostname if exists
+  shell: ssh-keygen -R {{ item }} 
+  with_items: group
+
+- name: Add known hosts
+  local_action: command ssh -oStrictHostKeyChecking=no {{ item }} exit
+  with_items: group
+
+- name: Copy Auth key
+  shell: scp  /root/.ssh/authorized_keys root@{{ item }}:/tmp
+  with_items: group
+
+

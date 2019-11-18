@@ -1,0 +1,10 @@
+---
+
+- name: init remote public bond ssh configuration
+  hosts: localhost
+  vars:
+    ssh_delay: 10
+    ssh_tmout: 60000
+  roles:
+    - { role: known-hosts, group: "{{ groups['reconfig'] }}" }
+

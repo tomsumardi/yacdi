@@ -1,0 +1,27 @@
+---
+
+ServerConfiguration_UUID: 897D946A-D4D6-4fb0-8E0C-F5916AC114AC
+StorageProfile_Drive_OperatingSystem: "/dev/sdd"
+ServerConfiguration_Interface_Toggle: "yes"
+ServerConfiguration_Interface_Ether:
+    - NetworkName: enp0s3
+      IPAddress: 192.168.60.3
+      GwAddress: 192.168.60.1
+      Prefix: 24
+      Bootproto: static
+      Onboot: yes
+      Mtu: 1500
+      DNS: 192.168.57.101
+ServerConfiguration_Interface_Bond:
+    - NetworkName: Public
+      IPAddress: 192.168.57.101
+      GwAddress: 192.168.57.1
+      Prefix: 24
+      Bootproto: static
+      Onboot: yes
+      Mtu: 1500
+      BondType: active-backup
+      Bond_miimon: 100
+      BondSlaves: 
+        - enp0s8
+        - enp0s9

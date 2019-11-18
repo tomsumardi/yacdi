@@ -1,0 +1,150 @@
+{
+    "StorageClusterDefinition": {
+        "HardwareProfiles": {
+            "HardwareProfile": {
+                "Name": "StarterKit",
+                "Drive": [
+                    {
+                        "DriveType": "SSD",
+                        "SizeInGB": "10",
+                        "Quantity": "1"
+                    },
+                    {
+                        "DriveType": "HDD",
+                        "SizeInGB": "10",
+                        "Quantity": "1"
+                    },
+                    {
+                        "DriveType": "HDD",
+                        "SizeInGB": "10",
+                        "Quantity": "1"
+                    }
+                ],
+                "NIC": [
+                    {
+                        "BandwidthInGbps": "1",
+                        "Quantity": "1"
+                    },
+                    {
+                        "BandwidthInGbps": "10",
+                        "Quantity": "4"
+                    }
+                ]
+            }
+        },
+        "StorageProfiles": {
+            "StorageProfile": {
+                "Name": "StorageSK",
+                "HardwareProfileName": "StarterKit",
+                "Drive": [
+                    {
+                        "DriveType": "SSD",
+                        "SizeInGB": "10",
+                        "DriveUse": "OperatingSystem",
+                        "Quantity": "1",
+                        "Comment": "RAID 1: 2x SSD"
+                    },
+                    {
+                        "DriveType": "HDD",
+                        "SizeInGB": "10",
+                        "DriveUse": "Journal",
+                        "Quantity": "1"
+                    },
+                    {
+                        "DriveType": "HDD",
+                        "SizeInGB": "10",
+                        "DriveUse": "Data",
+                        "Quantity": "1"
+                    }
+                ]
+            }
+        },
+        "ServerConfigurations": {
+            "ServerConfiguration": {
+                "HostName": "ceph-node1",
+                "StorageProfileName": "StorageSK",
+                "Comment": "BigD/8/14/9",
+                "UUID": "897D946A-D4D6-4fb0-8E0C-F5916AC114AC",
+                "Interface": [
+                    {
+                        "InterfaceName": "1GigE",
+                        "NetworkName": "CandC",
+                        "IPAddress": "192.168.60.3",
+                        "BondType": "none",
+                        "MACAddresses": {
+                            "MACAddress": "08:00:27:b2:eb:c5"
+                        },
+                        "UUID": "19e97c03-4e97-4f50-b0b1-e6f41e05c943"
+                    },
+                    {
+                        "InterfaceName": "public",
+                        "NetworkName": "Public",
+                        "IPAddress": "192.168.57.101",
+                        "BondType": "active-backup",
+                        "MACAddresses": {
+                            "MACAddress": [
+                                "08:00:27:47:89:c2",
+                                "08:00:27:ae:5e:a0"
+                            ]
+                        },
+                        "UUID": "7f515b29-b83f-414e-8bc0-b647a1d7b0c0"
+                    }
+                ]
+            }
+        },
+        "StorageConfiguration": {
+            "Monitor": {
+                "Host": {
+                    "HostName": "ceph-node1"
+                }
+            },
+            "Data": {
+                "Host": {
+                    "HostName": "ceph-node1"
+                }
+            },
+            "Client": {
+                "Host": {
+                    "HostName": "ceph-node1"
+                }
+            },
+            "TimeServer": [
+                {
+                    "Type": "NTP",
+                    "Address": "216.229.0.179"
+                },
+                {
+                    "Type": "NTP",
+                    "Address": "131.107.13.100"
+                },
+                {
+                    "Type": "NTP",
+                    "Address": "128.138.141.172"
+                },
+                {
+                    "Type": "NTP",
+                    "Address": "24.56.178.140"
+                }
+            ],
+            "Network": [
+                {
+                    "NetworkName": "CandC",
+                    "NetworkType": "Management",
+                    "Subnet": "192.168.60.0",
+                    "Gateway": "192.168.60.1",
+                    "Prefix": "24"
+                },
+                {
+                    "NetworkName": "Public",
+                    "NetworkType": "Inter-Public",
+                    "Subnet": "192.168.57.0",
+                    "Gateway": "192.168.57.1",
+                    "Prefix": "24"
+                }
+            ],
+            "ClusterName": "my-starter-kit"
+        },
+        "_xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+        "_xsi:noNamespaceSchemaLocation": "StorageClusterDefinition.xsd"
+    }
+}

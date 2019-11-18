@@ -1,0 +1,2100 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "StorageClusterDefinition": {
+      "type": "object",
+      "properties": {
+        "HardwareProfiles": {
+          "type": "object",
+          "properties": {
+            "HardwareProfile": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "Name": {
+                      "type": "string"
+                    },
+                    "Drive": {
+                      "type": "object",
+                      "properties": {
+                        "DriveType": {
+                          "type": "string"
+                        },
+                        "SizeInGB": {
+                          "type": "string"
+                        },
+                        "Quantity": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "DriveType",
+                        "SizeInGB",
+                        "Quantity"
+                      ]
+                    },
+                    "NIC": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "BandwidthInGbps": {
+                              "type": "string"
+                            },
+                            "Quantity": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "BandwidthInGbps",
+                            "Quantity"
+                          ]
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "BandwidthInGbps": {
+                              "type": "string"
+                            },
+                            "Quantity": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "BandwidthInGbps",
+                            "Quantity"
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "Name",
+                    "Drive",
+                    "NIC"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "Name": {
+                      "type": "string"
+                    },
+                    "Drive": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "DriveType": {
+                              "type": "string"
+                            },
+                            "SizeInGB": {
+                              "type": "string"
+                            },
+                            "Quantity": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "DriveType",
+                            "SizeInGB",
+                            "Quantity"
+                          ]
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "DriveType": {
+                              "type": "string"
+                            },
+                            "SizeInGB": {
+                              "type": "string"
+                            },
+                            "Quantity": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "DriveType",
+                            "SizeInGB",
+                            "Quantity"
+                          ]
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "DriveType": {
+                              "type": "string"
+                            },
+                            "SizeInGB": {
+                              "type": "string"
+                            },
+                            "Quantity": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "DriveType",
+                            "SizeInGB",
+                            "Quantity"
+                          ]
+                        }
+                      ]
+                    },
+                    "NIC": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "BandwidthInGbps": {
+                              "type": "string"
+                            },
+                            "Quantity": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "BandwidthInGbps",
+                            "Quantity"
+                          ]
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "BandwidthInGbps": {
+                              "type": "string"
+                            },
+                            "Quantity": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "BandwidthInGbps",
+                            "Quantity"
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "Name",
+                    "Drive",
+                    "NIC"
+                  ]
+                }
+              ]
+            }
+          },
+          "required": [
+            "HardwareProfile"
+          ]
+        },
+        "StorageProfiles": {
+          "type": "object",
+          "properties": {
+            "StorageProfile": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "Name": {
+                      "type": "string"
+                    },
+                    "HardwareProfileName": {
+                      "type": "string"
+                    },
+                    "Drive": {
+                      "type": "object",
+                      "properties": {
+                        "DriveType": {
+                          "type": "string"
+                        },
+                        "SizeInGB": {
+                          "type": "string"
+                        },
+                        "DriveUse": {
+                          "type": "string"
+                        },
+                        "Quantity": {
+                          "type": "string"
+                        },
+                        "Comment": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "DriveType",
+                        "SizeInGB",
+                        "DriveUse",
+                        "Quantity",
+                        "Comment"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "Name",
+                    "HardwareProfileName",
+                    "Drive"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "Name": {
+                      "type": "string"
+                    },
+                    "HardwareProfileName": {
+                      "type": "string"
+                    },
+                    "Drive": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "DriveType": {
+                              "type": "string"
+                            },
+                            "SizeInGB": {
+                              "type": "string"
+                            },
+                            "DriveUse": {
+                              "type": "string"
+                            },
+                            "Quantity": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "DriveType",
+                            "SizeInGB",
+                            "DriveUse",
+                            "Quantity"
+                          ]
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "DriveType": {
+                              "type": "string"
+                            },
+                            "SizeInGB": {
+                              "type": "string"
+                            },
+                            "DriveUse": {
+                              "type": "string"
+                            },
+                            "Quantity": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "DriveType",
+                            "SizeInGB",
+                            "DriveUse",
+                            "Quantity"
+                          ]
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "DriveType": {
+                              "type": "string"
+                            },
+                            "SizeInGB": {
+                              "type": "string"
+                            },
+                            "DriveUse": {
+                              "type": "string"
+                            },
+                            "Quantity": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "DriveType",
+                            "SizeInGB",
+                            "DriveUse",
+                            "Quantity"
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "Name",
+                    "HardwareProfileName",
+                    "Drive"
+                  ]
+                }
+              ]
+            }
+          },
+          "required": [
+            "StorageProfile"
+          ]
+        },
+        "ServerConfigurations": {
+          "type": "object",
+          "properties": {
+            "ServerConfiguration": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "HostName": {
+                      "type": "string"
+                    },
+                    "StorageProfileName": {
+                      "type": "string"
+                    },
+                    "Comment": {
+                      "type": "string"
+                    },
+                    "UUID": {
+                      "type": "string"
+                    },
+                    "Interface": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "InterfaceName": {
+                              "type": "string"
+                            },
+                            "NetworkName": {
+                              "type": "string"
+                            },
+                            "IPAddress": {
+                              "type": "string"
+                            },
+                            "BondType": {
+                              "type": "string"
+                            },
+                            "MACAddresses": {
+                              "type": "object",
+                              "properties": {
+                                "MACAddress": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "MACAddress"
+                              ]
+                            },
+                            "UUID": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "InterfaceName",
+                            "NetworkName",
+                            "IPAddress",
+                            "BondType",
+                            "MACAddresses",
+                            "UUID"
+                          ]
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "InterfaceName": {
+                              "type": "string"
+                            },
+                            "NetworkName": {
+                              "type": "string"
+                            },
+                            "IPAddress": {
+                              "type": "string"
+                            },
+                            "BondType": {
+                              "type": "string"
+                            },
+                            "MACAddresses": {
+                              "type": "object",
+                              "properties": {
+                                "MACAddress": {
+                                  "type": "array",
+                                  "items": [
+                                    {
+                                      "type": "string"
+                                    },
+                                    {
+                                      "type": "string"
+                                    }
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "MACAddress"
+                              ]
+                            },
+                            "UUID": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "InterfaceName",
+                            "NetworkName",
+                            "IPAddress",
+                            "BondType",
+                            "MACAddresses",
+                            "UUID"
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "HostName",
+                    "StorageProfileName",
+                    "Comment",
+                    "UUID",
+                    "Interface"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "HostName": {
+                      "type": "string"
+                    },
+                    "StorageProfileName": {
+                      "type": "string"
+                    },
+                    "Comment": {
+                      "type": "string"
+                    },
+                    "UUID": {
+                      "type": "string"
+                    },
+                    "Interface": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "InterfaceName": {
+                              "type": "string"
+                            },
+                            "NetworkName": {
+                              "type": "string"
+                            },
+                            "IPAddress": {
+                              "type": "string"
+                            },
+                            "BondType": {
+                              "type": "string"
+                            },
+                            "MACAddresses": {
+                              "type": "object",
+                              "properties": {
+                                "MACAddress": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "MACAddress"
+                              ]
+                            },
+                            "UUID": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "InterfaceName",
+                            "NetworkName",
+                            "IPAddress",
+                            "BondType",
+                            "MACAddresses",
+                            "UUID"
+                          ]
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "InterfaceName": {
+                              "type": "string"
+                            },
+                            "NetworkName": {
+                              "type": "string"
+                            },
+                            "IPAddress": {
+                              "type": "string"
+                            },
+                            "BondType": {
+                              "type": "string"
+                            },
+                            "MACAddresses": {
+                              "type": "object",
+                              "properties": {
+                                "MACAddress": {
+                                  "type": "array",
+                                  "items": [
+                                    {
+                                      "type": "string"
+                                    },
+                                    {
+                                      "type": "string"
+                                    }
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "MACAddress"
+                              ]
+                            },
+                            "UUID": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "InterfaceName",
+                            "NetworkName",
+                            "IPAddress",
+                            "BondType",
+                            "MACAddresses",
+                            "UUID"
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "HostName",
+                    "StorageProfileName",
+                    "Comment",
+                    "UUID",
+                    "Interface"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "HostName": {
+                      "type": "string"
+                    },
+                    "StorageProfileName": {
+                      "type": "string"
+                    },
+                    "Comment": {
+                      "type": "string"
+                    },
+                    "UUID": {
+                      "type": "string"
+                    },
+                    "Interface": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "InterfaceName": {
+                              "type": "string"
+                            },
+                            "NetworkName": {
+                              "type": "string"
+                            },
+                            "IPAddress": {
+                              "type": "string"
+                            },
+                            "BondType": {
+                              "type": "string"
+                            },
+                            "MACAddresses": {
+                              "type": "object",
+                              "properties": {
+                                "MACAddress": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "MACAddress"
+                              ]
+                            },
+                            "UUID": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "InterfaceName",
+                            "NetworkName",
+                            "IPAddress",
+                            "BondType",
+                            "MACAddresses",
+                            "UUID"
+                          ]
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "InterfaceName": {
+                              "type": "string"
+                            },
+                            "NetworkName": {
+                              "type": "string"
+                            },
+                            "IPAddress": {
+                              "type": "string"
+                            },
+                            "BondType": {
+                              "type": "string"
+                            },
+                            "MACAddresses": {
+                              "type": "object",
+                              "properties": {
+                                "MACAddress": {
+                                  "type": "array",
+                                  "items": [
+                                    {
+                                      "type": "string"
+                                    },
+                                    {
+                                      "type": "string"
+                                    }
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "MACAddress"
+                              ]
+                            },
+                            "UUID": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "InterfaceName",
+                            "NetworkName",
+                            "IPAddress",
+                            "BondType",
+                            "MACAddresses",
+                            "UUID"
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "HostName",
+                    "StorageProfileName",
+                    "Comment",
+                    "UUID",
+                    "Interface"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "HostName": {
+                      "type": "string"
+                    },
+                    "StorageProfileName": {
+                      "type": "string"
+                    },
+                    "Comment": {
+                      "type": "string"
+                    },
+                    "UUID": {
+                      "type": "string"
+                    },
+                    "Interface": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "InterfaceName": {
+                              "type": "string"
+                            },
+                            "NetworkName": {
+                              "type": "string"
+                            },
+                            "IPAddress": {
+                              "type": "string"
+                            },
+                            "BondType": {
+                              "type": "string"
+                            },
+                            "MACAddresses": {
+                              "type": "object",
+                              "properties": {
+                                "MACAddress": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "MACAddress"
+                              ]
+                            },
+                            "UUID": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "InterfaceName",
+                            "NetworkName",
+                            "IPAddress",
+                            "BondType",
+                            "MACAddresses",
+                            "UUID"
+                          ]
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "InterfaceName": {
+                              "type": "string"
+                            },
+                            "NetworkName": {
+                              "type": "string"
+                            },
+                            "IPAddress": {
+                              "type": "string"
+                            },
+                            "BondType": {
+                              "type": "string"
+                            },
+                            "MACAddresses": {
+                              "type": "object",
+                              "properties": {
+                                "MACAddress": {
+                                  "type": "array",
+                                  "items": [
+                                    {
+                                      "type": "string"
+                                    },
+                                    {
+                                      "type": "string"
+                                    }
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "MACAddress"
+                              ]
+                            },
+                            "UUID": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "InterfaceName",
+                            "NetworkName",
+                            "IPAddress",
+                            "BondType",
+                            "MACAddresses",
+                            "UUID"
+                          ]
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "InterfaceName": {
+                              "type": "string"
+                            },
+                            "NetworkName": {
+                              "type": "string"
+                            },
+                            "IPAddress": {
+                              "type": "string"
+                            },
+                            "BondType": {
+                              "type": "string"
+                            },
+                            "MACAddresses": {
+                              "type": "object",
+                              "properties": {
+                                "MACAddress": {
+                                  "type": "array",
+                                  "items": [
+                                    {
+                                      "type": "string"
+                                    },
+                                    {
+                                      "type": "string"
+                                    }
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "MACAddress"
+                              ]
+                            },
+                            "UUID": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "InterfaceName",
+                            "NetworkName",
+                            "IPAddress",
+                            "BondType",
+                            "MACAddresses",
+                            "UUID"
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "HostName",
+                    "StorageProfileName",
+                    "Comment",
+                    "UUID",
+                    "Interface"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "HostName": {
+                      "type": "string"
+                    },
+                    "StorageProfileName": {
+                      "type": "string"
+                    },
+                    "Comment": {
+                      "type": "string"
+                    },
+                    "UUID": {
+                      "type": "string"
+                    },
+                    "Interface": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "InterfaceName": {
+                              "type": "string"
+                            },
+                            "NetworkName": {
+                              "type": "string"
+                            },
+                            "IPAddress": {
+                              "type": "string"
+                            },
+                            "BondType": {
+                              "type": "string"
+                            },
+                            "MACAddresses": {
+                              "type": "object",
+                              "properties": {
+                                "MACAddress": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "MACAddress"
+                              ]
+                            },
+                            "UUID": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "InterfaceName",
+                            "NetworkName",
+                            "IPAddress",
+                            "BondType",
+                            "MACAddresses",
+                            "UUID"
+                          ]
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "InterfaceName": {
+                              "type": "string"
+                            },
+                            "NetworkName": {
+                              "type": "string"
+                            },
+                            "IPAddress": {
+                              "type": "string"
+                            },
+                            "BondType": {
+                              "type": "string"
+                            },
+                            "MACAddresses": {
+                              "type": "object",
+                              "properties": {
+                                "MACAddress": {
+                                  "type": "array",
+                                  "items": [
+                                    {
+                                      "type": "string"
+                                    },
+                                    {
+                                      "type": "string"
+                                    }
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "MACAddress"
+                              ]
+                            },
+                            "UUID": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "InterfaceName",
+                            "NetworkName",
+                            "IPAddress",
+                            "BondType",
+                            "MACAddresses",
+                            "UUID"
+                          ]
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "InterfaceName": {
+                              "type": "string"
+                            },
+                            "NetworkName": {
+                              "type": "string"
+                            },
+                            "IPAddress": {
+                              "type": "string"
+                            },
+                            "BondType": {
+                              "type": "string"
+                            },
+                            "MACAddresses": {
+                              "type": "object",
+                              "properties": {
+                                "MACAddress": {
+                                  "type": "array",
+                                  "items": [
+                                    {
+                                      "type": "string"
+                                    },
+                                    {
+                                      "type": "string"
+                                    }
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "MACAddress"
+                              ]
+                            },
+                            "UUID": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "InterfaceName",
+                            "NetworkName",
+                            "IPAddress",
+                            "BondType",
+                            "MACAddresses",
+                            "UUID"
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "HostName",
+                    "StorageProfileName",
+                    "Comment",
+                    "UUID",
+                    "Interface"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "HostName": {
+                      "type": "string"
+                    },
+                    "StorageProfileName": {
+                      "type": "string"
+                    },
+                    "Comment": {
+                      "type": "string"
+                    },
+                    "UUID": {
+                      "type": "string"
+                    },
+                    "Interface": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "InterfaceName": {
+                              "type": "string"
+                            },
+                            "NetworkName": {
+                              "type": "string"
+                            },
+                            "IPAddress": {
+                              "type": "string"
+                            },
+                            "BondType": {
+                              "type": "string"
+                            },
+                            "MACAddresses": {
+                              "type": "object",
+                              "properties": {
+                                "MACAddress": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "MACAddress"
+                              ]
+                            },
+                            "UUID": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "InterfaceName",
+                            "NetworkName",
+                            "IPAddress",
+                            "BondType",
+                            "MACAddresses",
+                            "UUID"
+                          ]
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "InterfaceName": {
+                              "type": "string"
+                            },
+                            "NetworkName": {
+                              "type": "string"
+                            },
+                            "IPAddress": {
+                              "type": "string"
+                            },
+                            "BondType": {
+                              "type": "string"
+                            },
+                            "MACAddresses": {
+                              "type": "object",
+                              "properties": {
+                                "MACAddress": {
+                                  "type": "array",
+                                  "items": [
+                                    {
+                                      "type": "string"
+                                    },
+                                    {
+                                      "type": "string"
+                                    }
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "MACAddress"
+                              ]
+                            },
+                            "UUID": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "InterfaceName",
+                            "NetworkName",
+                            "IPAddress",
+                            "BondType",
+                            "MACAddresses",
+                            "UUID"
+                          ]
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "InterfaceName": {
+                              "type": "string"
+                            },
+                            "NetworkName": {
+                              "type": "string"
+                            },
+                            "IPAddress": {
+                              "type": "string"
+                            },
+                            "BondType": {
+                              "type": "string"
+                            },
+                            "MACAddresses": {
+                              "type": "object",
+                              "properties": {
+                                "MACAddress": {
+                                  "type": "array",
+                                  "items": [
+                                    {
+                                      "type": "string"
+                                    },
+                                    {
+                                      "type": "string"
+                                    }
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "MACAddress"
+                              ]
+                            },
+                            "UUID": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "InterfaceName",
+                            "NetworkName",
+                            "IPAddress",
+                            "BondType",
+                            "MACAddresses",
+                            "UUID"
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "HostName",
+                    "StorageProfileName",
+                    "Comment",
+                    "UUID",
+                    "Interface"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "HostName": {
+                      "type": "string"
+                    },
+                    "StorageProfileName": {
+                      "type": "string"
+                    },
+                    "Comment": {
+                      "type": "string"
+                    },
+                    "UUID": {
+                      "type": "string"
+                    },
+                    "Interface": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "InterfaceName": {
+                              "type": "string"
+                            },
+                            "NetworkName": {
+                              "type": "string"
+                            },
+                            "IPAddress": {
+                              "type": "string"
+                            },
+                            "BondType": {
+                              "type": "string"
+                            },
+                            "MACAddresses": {
+                              "type": "object",
+                              "properties": {
+                                "MACAddress": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "MACAddress"
+                              ]
+                            },
+                            "UUID": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "InterfaceName",
+                            "NetworkName",
+                            "IPAddress",
+                            "BondType",
+                            "MACAddresses",
+                            "UUID"
+                          ]
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "InterfaceName": {
+                              "type": "string"
+                            },
+                            "NetworkName": {
+                              "type": "string"
+                            },
+                            "IPAddress": {
+                              "type": "string"
+                            },
+                            "BondType": {
+                              "type": "string"
+                            },
+                            "MACAddresses": {
+                              "type": "object",
+                              "properties": {
+                                "MACAddress": {
+                                  "type": "array",
+                                  "items": [
+                                    {
+                                      "type": "string"
+                                    },
+                                    {
+                                      "type": "string"
+                                    }
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "MACAddress"
+                              ]
+                            },
+                            "UUID": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "InterfaceName",
+                            "NetworkName",
+                            "IPAddress",
+                            "BondType",
+                            "MACAddresses",
+                            "UUID"
+                          ]
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "InterfaceName": {
+                              "type": "string"
+                            },
+                            "NetworkName": {
+                              "type": "string"
+                            },
+                            "IPAddress": {
+                              "type": "string"
+                            },
+                            "BondType": {
+                              "type": "string"
+                            },
+                            "MACAddresses": {
+                              "type": "object",
+                              "properties": {
+                                "MACAddress": {
+                                  "type": "array",
+                                  "items": [
+                                    {
+                                      "type": "string"
+                                    },
+                                    {
+                                      "type": "string"
+                                    }
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "MACAddress"
+                              ]
+                            },
+                            "UUID": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "InterfaceName",
+                            "NetworkName",
+                            "IPAddress",
+                            "BondType",
+                            "MACAddresses",
+                            "UUID"
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "HostName",
+                    "StorageProfileName",
+                    "Comment",
+                    "UUID",
+                    "Interface"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "HostName": {
+                      "type": "string"
+                    },
+                    "StorageProfileName": {
+                      "type": "string"
+                    },
+                    "Comment": {
+                      "type": "string"
+                    },
+                    "UUID": {
+                      "type": "string"
+                    },
+                    "Interface": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "InterfaceName": {
+                              "type": "string"
+                            },
+                            "NetworkName": {
+                              "type": "string"
+                            },
+                            "IPAddress": {
+                              "type": "string"
+                            },
+                            "BondType": {
+                              "type": "string"
+                            },
+                            "MACAddresses": {
+                              "type": "object",
+                              "properties": {
+                                "MACAddress": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "MACAddress"
+                              ]
+                            },
+                            "UUID": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "InterfaceName",
+                            "NetworkName",
+                            "IPAddress",
+                            "BondType",
+                            "MACAddresses",
+                            "UUID"
+                          ]
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "InterfaceName": {
+                              "type": "string"
+                            },
+                            "NetworkName": {
+                              "type": "string"
+                            },
+                            "IPAddress": {
+                              "type": "string"
+                            },
+                            "BondType": {
+                              "type": "string"
+                            },
+                            "MACAddresses": {
+                              "type": "object",
+                              "properties": {
+                                "MACAddress": {
+                                  "type": "array",
+                                  "items": [
+                                    {
+                                      "type": "string"
+                                    },
+                                    {
+                                      "type": "string"
+                                    }
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "MACAddress"
+                              ]
+                            },
+                            "UUID": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "InterfaceName",
+                            "NetworkName",
+                            "IPAddress",
+                            "BondType",
+                            "MACAddresses",
+                            "UUID"
+                          ]
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "InterfaceName": {
+                              "type": "string"
+                            },
+                            "NetworkName": {
+                              "type": "string"
+                            },
+                            "IPAddress": {
+                              "type": "string"
+                            },
+                            "BondType": {
+                              "type": "string"
+                            },
+                            "MACAddresses": {
+                              "type": "object",
+                              "properties": {
+                                "MACAddress": {
+                                  "type": "array",
+                                  "items": [
+                                    {
+                                      "type": "string"
+                                    },
+                                    {
+                                      "type": "string"
+                                    }
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "MACAddress"
+                              ]
+                            },
+                            "UUID": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "InterfaceName",
+                            "NetworkName",
+                            "IPAddress",
+                            "BondType",
+                            "MACAddresses",
+                            "UUID"
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "HostName",
+                    "StorageProfileName",
+                    "Comment",
+                    "UUID",
+                    "Interface"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "HostName": {
+                      "type": "string"
+                    },
+                    "StorageProfileName": {
+                      "type": "string"
+                    },
+                    "Comment": {
+                      "type": "string"
+                    },
+                    "UUID": {
+                      "type": "string"
+                    },
+                    "Interface": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "InterfaceName": {
+                              "type": "string"
+                            },
+                            "NetworkName": {
+                              "type": "string"
+                            },
+                            "IPAddress": {
+                              "type": "string"
+                            },
+                            "BondType": {
+                              "type": "string"
+                            },
+                            "MACAddresses": {
+                              "type": "object",
+                              "properties": {
+                                "MACAddress": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "MACAddress"
+                              ]
+                            },
+                            "UUID": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "InterfaceName",
+                            "NetworkName",
+                            "IPAddress",
+                            "BondType",
+                            "MACAddresses",
+                            "UUID"
+                          ]
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "InterfaceName": {
+                              "type": "string"
+                            },
+                            "NetworkName": {
+                              "type": "string"
+                            },
+                            "IPAddress": {
+                              "type": "string"
+                            },
+                            "BondType": {
+                              "type": "string"
+                            },
+                            "MACAddresses": {
+                              "type": "object",
+                              "properties": {
+                                "MACAddress": {
+                                  "type": "array",
+                                  "items": [
+                                    {
+                                      "type": "string"
+                                    },
+                                    {
+                                      "type": "string"
+                                    }
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "MACAddress"
+                              ]
+                            },
+                            "UUID": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "InterfaceName",
+                            "NetworkName",
+                            "IPAddress",
+                            "BondType",
+                            "MACAddresses",
+                            "UUID"
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "HostName",
+                    "StorageProfileName",
+                    "Comment",
+                    "UUID",
+                    "Interface"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "HostName": {
+                      "type": "string"
+                    },
+                    "StorageProfileName": {
+                      "type": "string"
+                    },
+                    "Comment": {
+                      "type": "string"
+                    },
+                    "UUID": {
+                      "type": "string"
+                    },
+                    "Interface": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "InterfaceName": {
+                              "type": "string"
+                            },
+                            "NetworkName": {
+                              "type": "string"
+                            },
+                            "IPAddress": {
+                              "type": "string"
+                            },
+                            "BondType": {
+                              "type": "string"
+                            },
+                            "MACAddresses": {
+                              "type": "object",
+                              "properties": {
+                                "MACAddress": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "MACAddress"
+                              ]
+                            },
+                            "UUID": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "InterfaceName",
+                            "NetworkName",
+                            "IPAddress",
+                            "BondType",
+                            "MACAddresses",
+                            "UUID"
+                          ]
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "InterfaceName": {
+                              "type": "string"
+                            },
+                            "NetworkName": {
+                              "type": "string"
+                            },
+                            "IPAddress": {
+                              "type": "string"
+                            },
+                            "BondType": {
+                              "type": "string"
+                            },
+                            "MACAddresses": {
+                              "type": "object",
+                              "properties": {
+                                "MACAddress": {
+                                  "type": "array",
+                                  "items": [
+                                    {
+                                      "type": "string"
+                                    },
+                                    {
+                                      "type": "string"
+                                    }
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "MACAddress"
+                              ]
+                            },
+                            "UUID": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "InterfaceName",
+                            "NetworkName",
+                            "IPAddress",
+                            "BondType",
+                            "MACAddresses",
+                            "UUID"
+                          ]
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "InterfaceName": {
+                              "type": "string"
+                            },
+                            "NetworkName": {
+                              "type": "string"
+                            },
+                            "IPAddress": {
+                              "type": "string"
+                            },
+                            "BondType": {
+                              "type": "string"
+                            },
+                            "VLAN": {
+                              "type": "string"
+                            },
+                            "MACAddresses": {
+                              "type": "object",
+                              "properties": {
+                                "MACAddress": {
+                                  "type": "array",
+                                  "items": [
+                                    {
+                                      "type": "string"
+                                    },
+                                    {
+                                      "type": "string"
+                                    }
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "MACAddress"
+                              ]
+                            },
+                            "UUID": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "InterfaceName",
+                            "NetworkName",
+                            "IPAddress",
+                            "BondType",
+                            "VLAN",
+                            "MACAddresses",
+                            "UUID"
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "HostName",
+                    "StorageProfileName",
+                    "Comment",
+                    "UUID",
+                    "Interface"
+                  ]
+                }
+              ]
+            }
+          },
+          "required": [
+            "ServerConfiguration"
+          ]
+        },
+        "StorageConfiguration": {
+          "type": "object",
+          "properties": {
+            "Monitor": {
+              "type": "object",
+              "properties": {
+                "Host": {
+                  "type": "object",
+                  "properties": {
+                    "HostName": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "string"
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "HostName"
+                  ]
+                }
+              },
+              "required": [
+                "Host"
+              ]
+            },
+            "Data": {
+              "type": "object",
+              "properties": {
+                "Host": {
+                  "type": "object",
+                  "properties": {
+                    "HostName": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "string"
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "HostName"
+                  ]
+                }
+              },
+              "required": [
+                "Host"
+              ]
+            },
+            "Client": {
+              "type": "object",
+              "properties": {
+                "Host": {
+                  "type": "object",
+                  "properties": {
+                    "HostName": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "string"
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "HostName"
+                  ]
+                }
+              },
+              "required": [
+                "Host"
+              ]
+            },
+            "TimeServer": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "Type": {
+                      "type": "string"
+                    },
+                    "Address": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "Type",
+                    "Address"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "Type": {
+                      "type": "string"
+                    },
+                    "Address": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "Type",
+                    "Address"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "Type": {
+                      "type": "string"
+                    },
+                    "Address": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "Type",
+                    "Address"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "Type": {
+                      "type": "string"
+                    },
+                    "Address": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "Type",
+                    "Address"
+                  ]
+                }
+              ]
+            },
+            "Network": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "NetworkName": {
+                      "type": "string"
+                    },
+                    "NetworkType": {
+                      "type": "string"
+                    },
+                    "Subnet": {
+                      "type": "string"
+                    },
+                    "Gateway": {
+                      "type": "string"
+                    },
+                    "Prefix": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "NetworkName",
+                    "NetworkType",
+                    "Subnet",
+                    "Gateway",
+                    "Prefix"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "NetworkName": {
+                      "type": "string"
+                    },
+                    "NetworkType": {
+                      "type": "string"
+                    },
+                    "Subnet": {
+                      "type": "string"
+                    },
+                    "Gateway": {
+                      "type": "string"
+                    },
+                    "Prefix": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "NetworkName",
+                    "NetworkType",
+                    "Subnet",
+                    "Gateway",
+                    "Prefix"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "NetworkName": {
+                      "type": "string"
+                    },
+                    "NetworkType": {
+                      "type": "string"
+                    },
+                    "Subnet": {
+                      "type": "string"
+                    },
+                    "Gateway": {
+                      "type": "string"
+                    },
+                    "Prefix": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "NetworkName",
+                    "NetworkType",
+                    "Subnet",
+                    "Gateway",
+                    "Prefix"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "NetworkName": {
+                      "type": "string"
+                    },
+                    "NetworkType": {
+                      "type": "string"
+                    },
+                    "Subnet": {
+                      "type": "string"
+                    },
+                    "Gateway": {
+                      "type": "string"
+                    },
+                    "Prefix": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "NetworkName",
+                    "NetworkType",
+                    "Subnet",
+                    "Gateway",
+                    "Prefix"
+                  ]
+                }
+              ]
+            },
+            "ClusterName": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "Monitor",
+            "Data",
+            "Client",
+            "TimeServer",
+            "Network",
+            "ClusterName"
+          ]
+        },
+        "_xmlns:xsi": {
+          "type": "string"
+        },
+        "_xsi:noNamespaceSchemaLocation": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "HardwareProfiles",
+        "StorageProfiles",
+        "ServerConfigurations",
+        "StorageConfiguration",
+        "_xmlns:xsi",
+        "_xsi:noNamespaceSchemaLocation"
+      ]
+    }
+  },
+  "required": [
+    "StorageClusterDefinition"
+  ]
+}

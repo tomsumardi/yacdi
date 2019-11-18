@@ -1,0 +1,34 @@
+{% if item.Bootproto == 'static' %}
+NAME={{ item.NetworkName }}
+DEVICE={{ item.NetworkName }}
+BOOTPROTO=none
+{% if item.IPAddress is defined %}
+IPADDR={{ item.IPAddress }}
+{% endif %}
+{% if item.Onboot is defined %}
+ONBOOT={{ item.Onboot }}
+{% endif %}
+{% if item.Prefix is defined %}
+PREFIX={{ item.Prefix }}
+{% endif %}
+{% if item.DNS is defined %}
+DNS1={{ item.DNS }}
+{% endif %}
+{% if item.GwAddress is defined %}
+GATEWAY={{ item.GwAddress }}
+{% endif %}
+NM_CONTROLLED=no
+USERCTL=no
+METRIC=100
+{% endif %}
+{% if item.Bootproto == 'dhcp' %}
+NAME={{ item.NetworkName }}
+DEVICE={{ item.NetworkName }}
+BOOTPROTO=dhcp
+ONBOOT=yes
+NM_CONTROLLED=no
+USERCTL=no
+{% if item.DNS is defined %}
+DNS1={{ item.DNS }}
+{% endif %}
+{% endif %}

@@ -1,0 +1,11 @@
+---
+
+- name: init local mgmt and bond network interface 
+  hosts: localhost
+  vars:
+    net_path: /etc/sysconfig/network-scripts
+  roles:
+     - networkintf
+  vars_files:
+     - /etc/ansible/host_vars/{{ ansible_hostname }}.public.yml
+

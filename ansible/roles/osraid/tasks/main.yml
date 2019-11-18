@@ -1,0 +1,6 @@
+---
+
+- name: setup os raid
+  template: src=osraid.j2 dest=/tmp/osraid  owner=root group=root mode=0644
+  with_items: StorageProfile_Drive_OperatingSystem
+

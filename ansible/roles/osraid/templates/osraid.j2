@@ -1,0 +1,4 @@
+clearpart  --initlabel --none
+bootloader --location=mbr --boot-drive={{item}}
+autopart --type=lvm
+clearpart --initlabel --all --drives={{item}} 

@@ -1,0 +1,45 @@
+---
+
+- name: Add the OS specific varibles
+  include_vars: "{{ ansible_os_family }}.yml"
+
+- name: Create the network configuration file for ethernet devices
+  template: src=ethernet_{{ ansible_os_family }}.j2 dest={{ net_path }}/ifcfg-{{ item.NetworkName }}
+  with_items: ServerConfiguration_Interface_Ether
+  when: ServerConfiguration_Interface_Ether is defined
+  register: ether_result
+
+- shell: ifdown {{ item.item.NetworkName }}; ifup {{ item.item.NetworkName }}
+  with_items: ether_result.results
+  when: ServerConfiguration_Interface_Toggle == "yes" and ether_result is defined and item.changed
+
+- name: Create the network configuration file for bond devices
+  template: src=bond_{{ ansible_os_family }}.j2 dest={{ net_path }}/ifcfg-{{ item.NetworkName }}
+  with_items: ServerConfiguration_Interface_Bond
+  when: ServerConfiguration_Interface_Bond is defined
+  register: bond_result
+
+- name: Make sure the bonding module is loaded
+  modprobe: name=bonding state=present
+  when: bond_result|changed
+
+- shell: ifdown {{ item.item.NetworkName }}; ifup {{ item.item.NetworkName }}
+  with_items: bond_result.results
+  when: ServerConfiguration_Interface_Toggle == "yes" and bond_result is defined and item.changed
+
+- name: Create the network configuration file for slave in the bond devices
+  template: src=bond_slave_{{ ansible_os_family }}.j2 dest={{ net_path }}/ifcfg-{{ item.1 }}
+  with_subelements:
+   - ServerConfiguration_Interface_Bond
+   - BondSlaves
+  when: ServerConfiguration_Interface_Bond is defined
+  register: bond_port_result
+
+- shell: ifdown {{ item.item.1 }}; ifup {{ item.item.1 }}
+  with_items: bond_port_result.results
+  when: ServerConfiguration_Interface_Toggle == "yes" and bond_port_result is defined and item.changed
+
+- shell: ifdown {{ item.item.NetworkName }}; ifup {{ item.item.NetworkName }}
+  with_items: bond_result.results
+  when: ServerConfiguration_Interface_Toggle == "yes" and bond_result is defined and item.changed
+

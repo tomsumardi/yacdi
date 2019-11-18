@@ -1,0 +1,5 @@
+---
+
+- name: continue anaconda installation
+  template: src=signalgo.j2 dest=/tmp/signalgo  owner=root group=root mode=0644
+

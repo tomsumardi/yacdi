@@ -1,0 +1,8 @@
+---
+
+- name: sanity installation check
+  hosts:
+     - reconfig
+  roles:
+     - ckinstall
+

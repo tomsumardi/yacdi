@@ -1,0 +1,53 @@
+---
+
+- name: init remote public bond ssh configuration
+  hosts: localhost
+  vars:
+    ssh_delay: 10
+    ssh_tmout: 60000
+  roles:
+    - { role: known-hosts, group: "{{ groups['provision'] }}" }
+
+- name: init remote node mgmt and bond interface
+  hosts: 
+     - provision
+  vars:
+     net_path: /tmp
+  roles:
+     - networkintf
+
+- name: init remote node logical drive as os drive
+  hosts: 
+     - provision
+  roles:
+     - osraid
+
+- name: unpaused remote node
+  hosts: 
+     - provision
+  roles:
+     - unpaused
+
+- name: init remote mgmt interface ssh configuration
+  hosts: localhost
+  vars:
+    ssh_delay: 10
+    ssh_tmout: 600
+  roles:
+    - { role: known-hosts, group: "{{ groups['mgmt'] }}" }
+
+- name: init remote public bond ssh configuration
+  hosts: localhost
+  vars:
+    ssh_delay: 10
+    ssh_tmout: 600
+  roles:
+    - { role: known-hosts, group: "{{ groups['provision'] }}" }
+
+- name: check/create uuid
+  hosts:
+     - provision
+  roles:
+     - ckuuid
+
+

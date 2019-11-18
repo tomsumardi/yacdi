@@ -1,0 +1,41 @@
+{% if item.Bootproto == 'static' %}
+NAME={{ item.NetworkName }}
+DEVICE={{ item.NetworkName }}
+USERCTL=no
+BOOTPROTO=none
+{% if item.IPAddress is defined %}
+IPADDR={{ item.IPAddress }}
+{% endif %}
+{% if item.Onboot is defined %}
+ONBOOT={{ item.Onboot|default("yes") }}
+{% endif %}
+{% if item.Prefix is defined %}
+PREFIX={{ item.Prefix }}
+{% endif %}
+{% if item.DNS is defined %}
+DNS1={{ item.DNS }}
+{% endif %}
+{% if item.GwAddress is defined %}
+GATEWAY={{ item.GwAddress }}
+{% endif %}
+BONDING_OPTS="mode={{ item.BondType }} miimon={{ item.Bond_miimon|default(100) }}"
+TYPE=Bond
+MTU={{ item.Mtu|default(1500) }}
+NM_CONTROLLED=no
+METRIC=110
+{% endif %}
+{% if item.Bootproto == 'dhcp' %}
+NAME={{ item.NetworkName }}
+DEVICE={{ item.NetworkName }}
+USERCTL=no
+BOOTPROTO=dhcp
+ONBOOT={{ item.Onboot|default("yes") }}
+BONDING_OPTS="mode={{ item.BondType }} miimon={{ item.Bond_miimon|default(100) }} "
+TYPE=Bond
+{% if item.DNS is defined %}
+DNS1={{ item.DNS }}
+{% endif %}
+MTU={{ item.Mtu|default(1500) }}
+NM_CONTROLLED=no
+METRIC=110
+{% endif %}

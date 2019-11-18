@@ -1,0 +1,14 @@
+---
+
+- name: check if node successfully installed
+  stat: path=/root/yacdi_installed
+  register: status
+
+- name: installation failure 
+  fail: msg="install failure" 
+  when: status.stat.exists == False
+
+- name: installation success 
+  debug: msg="install success" 
+  when: status.stat.exists == True
+

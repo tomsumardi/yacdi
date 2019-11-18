@@ -1,0 +1,15 @@
+---
+
+- name: copy ckuuid to all the hosts
+  template: src=ckuuid.j2 dest=/tmp/ckuuid.py  owner=root group=root mode=0777
+  with_items: ServerConfiguration_UUID
+  when: ServerConfiguration_UUID is defined
+
+- name: check uuid tag
+  shell: /tmp/./ckuuid.py
+  when: ServerConfiguration_UUID is defined
+  register: result
+
+- name: node state
+  debug: msg={{ result.stdout }}
+

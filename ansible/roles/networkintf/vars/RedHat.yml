@@ -1,0 +1,5 @@
+---
+network_pkgs:
+  - iputils
+
+#net_path: "/tmp"

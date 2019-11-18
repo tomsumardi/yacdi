@@ -1,0 +1,32 @@
+---
+
+- name: init remote node mgmt and bond interface
+  hosts: 
+     - reconfig
+  vars:
+     net_path: /tmp
+  roles:
+     - networkintf
+
+- name: init remote mgmt interface ssh configuration
+  hosts: localhost
+  vars:
+    ssh_delay: 10
+    ssh_tmout: 600
+  roles:
+    - { role: known-hosts, group: "{{ groups['mgmt'] }}" }
+
+- name: init remote public bond ssh configuration
+  hosts: localhost
+  vars:
+    ssh_delay: 10
+    ssh_tmout: 600
+  roles:
+    - { role: known-hosts, group: "{{ groups['reconfig'] }}" }
+
+- name: check/create uuid
+  hosts:
+     - reconfig
+  roles:
+     - ckuuid
+
