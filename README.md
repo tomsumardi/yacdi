@@ -18,4 +18,7 @@ ceph-node1.public
 - templates/micro-cluster.json
 - templates/small-cluster.json
 
+### Development environment:
+virtualbox with n-th vms
+
 Note: networkintf bonding library using playbook BSD licensed
